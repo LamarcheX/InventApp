@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrar Usuarios</title>
+    <link rel="stylesheet" href="/css/users-management.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">InventApp</div>
+        <div class="search-bar">
+          <input type="text" placeholder="Buscar..." />
+          <button class="search-button">🔍</button>
+        </div>
+        <div class="user-info">
+          <span>Facturar</span>
+          <span>Juan Pérez</span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main-container">
+        <h2>Administrar Usuarios</h2>
+        <section class="user-management">
+          <form>
+              <div class="user-form">
+              <div class="user-management-imagen"></div>
+              <div class="user-management-nombre">
+                <input type="text" placeholder="Nombre(s)" />
+              </div>
+              <div class="user-management-apellido1">
+                <input type="text" placeholder="Apellido 1" />
+              </div>
+              <div class="user-management-apellido2">
+                <input type="text" placeholder="Apellido 2" />
+              </div>
+              <div class="user-management-celular">
+                <input type="text" placeholder="Número Celular" />
+              </div>
+              <div class="user-management-cedula">
+                <input type="text" placeholder="Cédula" />
+              </div>
+              <div class="user-management-submitBtn">
+                <button type="submit" class="add-user-button">
+                  Agregar Usuario
+                </button>
+              </div>
+            </form>
+        </section>
+        <h2>Listado de Usuarios</h2>
+        <div class="users-list">
+          <section class="users-list-head">
+            <div class="users-list-image-head"><h3>Foto</h3></div>
+            <div class="users-list-nombre-head"><h3>Nombre(s)</h3> </div>
+            <div class="users-list-apellido1-head"><h3>Apellido</h3> </div>
+            <div class="users-list-apellido2-head"> <h3>Apellido</h3> </div>
+            <div class="users-list-celular-head"> <h3>Celular</h3> </div>
+            <div class="users-list-cedula-head"> <h3>Cedula</h3> </div>
+            <div class="users-list-acciones-head"> <h3>Acciones</h3> </div>
+          </section>
+          <section class="users-list-rows">
+            <div class="users-list-image"> <h4>foto</h4> </div>
+            <div class="users-list-nombre"> <p>nosadfoads</p> </div>
+            <div class="users-list-apellido1"> <p> apsdf</p> </div>
+            <div class="users-list-apellido2"> <p> abasf</p> </div>
+            <div class="users-list-celular"> <p>caedadsf</p> </div>
+            <div class="users-list-cedula"> <p>cffdsad</p> </div>
+            <div class="users-list-acciones">
+              <button class="deleteUser">Eliminar</button>
+              <button class="updateUser">Actualizar</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Todos los derechos reservados, 2024.</p>
+    </footer>
+  </body>
+</html>
