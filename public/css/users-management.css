@@ -110,12 +110,12 @@
   grid-row-gap: 0px;
   border-radius: 6px;
   padding-inline: 20px;
-  border: var(--debug);
+  /* border: var(--debug); */
 }
 
 .users-list-rows > div,
 .users-list-head > div {
-  border: var(--debug);
+  /* border: var(--debug); */
 }
 
 .users-list-head h3 {
@@ -157,7 +157,7 @@
   box-shadow: 2px 2px 3px var(--clr-grey-25);
   /* align-content: center; */
   align-items: center;
-  border: var(--debug);
+  /* border: var(--debug); */
 }
 
 .users-list-image-row {
