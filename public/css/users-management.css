@@ -8,6 +8,7 @@
   --fs-600: 2rem;
   --clr-white: #f7f7f7;
   --clr-grey-10: #ededed;
+  --clr-grey-25: #ccc;
   --clr-grey-50: #aaa;
   --clr-grey-100: #777;
   --clr-black: #333;
@@ -108,17 +109,18 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   border-radius: 6px;
+  padding-inline: 20px;
+  border: var(--debug);
+}
+
+.users-list-rows > div,
+.users-list-head > div {
   border: var(--debug);
 }
 
 .users-list-head h3 {
   font-weight: 600;
   font-size: 1.12rem;
-}
-
-.users-list-rows {
-  background-color: var(--clr-white);
-  margin-top: 16px;
 }
 
 /* Users Table Head */
@@ -142,18 +144,32 @@
 }
 .users-list-acciones-head {
   grid-area: 1 / 7 / 2 / 8;
+  text-align: center;
+  width: 100%;
 }
 
 /* Users Rows */
+
+.users-list-rows {
+  background-color: var(--clr-white);
+  margin-top: 16px;
+  height: 3rem;
+  box-shadow: 2px 2px 3px var(--clr-grey-25);
+  /* align-content: center; */
+  align-items: center;
+  border: var(--debug);
+}
+
 .users-list-image-row {
   grid-area: 1 / 1 / 2 / 2;
-  width: 300px;
-  height: 300px;
-  background-color: var(--clr-white);
+  width: 40px;
+  height: 40px;
+  background-color: #e0e0e0;
 }
+
 .users-list-nombre-row {
   grid-area: 1 / 2 / 2 / 3;
-  border: var(--debug);
+  align-self: center;
 }
 .users-list-apellido1-row {
   grid-area: 1 / 3 / 2 / 4;
@@ -169,32 +185,26 @@
 }
 .users-list-acciones-row {
   grid-area: 1 / 7 / 2 / 8;
-}
-
-.user-name {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 5px;
 }
 
-.users-list {
-  border: var(--debug);
-  width: 100%;
-}
-.user-image-placeholder {
-  width: 40px;
-  height: 40px;
-  background-color: #e0e0e0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.delete-button {
-  background-color: var(--clr-danger);
+.users-list-acciones-deleteUser,
+.users-list-acciones-updateUser {
   color: #fff;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.users-list-acciones-deleteUser {
+  background-color: var(--clr-danger);
+}
+.users-list-acciones-updateUser {
+  background-color: var(--clr-grey-100);
 }
