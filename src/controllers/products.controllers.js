@@ -27,8 +27,8 @@ controller.getAllProducts = async (req, res) => {
     titulo: "Listado de Productos",
     productos: productsBD,
   });
-  console.log(productsBD);
-  console.log(typeof productsBD);
+  // console.log(productsBD);
+  // console.log(typeof productsBD);
 };
 
 controller.getProductBySeccion = async (req, res) => {
@@ -50,7 +50,7 @@ controller.getProductDetail = async (req, res) => {
   res.render("prodDetail", {
     producto: producto,
   });
-  console.log(producto);
+  // console.log(producto);
 };
 
 module.exports = controller;
