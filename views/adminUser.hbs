@@ -40,7 +40,7 @@
     </section>
     <h2>Listado de Usuarios</h2>
     <div class="users-list">
-      <section class="users-list-head">
+      <div class="users-list-head">
         <div class="users-list-image-head">
           <h3>Foto</h3>
         </div>
@@ -62,32 +62,32 @@
         <div class="users-list-acciones-head">
           <h3>Acciones</h3>
         </div>
-      </section>
+      </div>
       {{#each users}}
-      <section class="users-list-rows">
+      <div class="users-list-rows">
         <div class="users-list-image">
           <h4>foto</h4>
         </div>
         <div class="users-list-nombre">
-          <p>{{ users.nombres }}</p>
+          {{ this.nombres }}
         </div>
         <div class="users-list-apellido1">
-          <p> {{ users.apellido1 }}</p>
+          {{ this.apellido1 }}
         </div>
         <div class="users-list-apellido2">
-          <p> {{ users.apellido2 }}</p>
+          {{ this.apellido2 }}
         </div>
         <div class="users-list-celular">
-          <p>{{ users.celular }}</p>
+          {{ this.celular }}
         </div>
         <div class="users-list-cedula">
-          <p>{{ users.cedula }}</p>
+          {{ this.cedula }}
         </div>
         <div class="users-list-acciones">
-          <button class="deleteUser">Eliminar</button>
-          <button class="updateUser">Actualizar</button>
+          <button class="users-list-acciones-deleteUser">X</button>
+          <button class="users-list-acciones-updateUser">V</button>
         </div>
-      </section>
+      </div>
       {{/each}}
     </div>
   </main>

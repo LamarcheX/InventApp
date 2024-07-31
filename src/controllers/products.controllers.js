@@ -27,6 +27,8 @@ controller.getAllProducts = async (req, res) => {
     titulo: "Listado de Productos",
     productos: productsBD,
   });
+  console.log(productsBD);
+  console.log(typeof productsBD);
 };
 
 controller.getProductBySeccion = async (req, res) => {

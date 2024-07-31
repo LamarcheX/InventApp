@@ -22,6 +22,8 @@ controller.getUsers = async (req, res) => {
       titulo: "Administración de Usuarios",
       users: usersRequest,
     }); // Renderizar la vista con la lista de usuarios
+    console.log(usersRequest);
+    console.log(typeof usersRequest);
   } catch (error) {
     res.status(500).send("Error del servidor");
   }
