@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrar Usuario</title>
+  <link rel="stylesheet" href="/css/user-edit.css">
+</head>
+
+<body>
+  {{> header }}
+  <main>
+    <h2>Modificar Usuario</h2>
+    <div class="user-management">
+      <div class="user-image">
+        <img src={{ user.foto }} alt="{{ user.nombre }}" class="imagendelproducto" value="{{ user.foto }}">
+      </div>
+      <div class="user-fields">
+        <form action="/users/actualizar/{{user.id}}" method="POST">
+          <input type="text" placeholder="Nombre del Usuario" name="nombres" value="{{ user.nombres }}" required />
+          <input type="text" placeholder="Apellido 1" name="apellido1" value="{{ user.apellido1 }}" required />
+          <input type="text" placeholder="Apellido 2" name="apellido2" value="{{ user.apellido2 }}" />
+          <input type="text" placeholder="Celular" name="celular" value="{{ user.celular }}" />
+          <input type="text" placeholder="Cedula" name="cedula" value="{{ user.cedula }}" required />
+          <input type="text" placeholder="email" name="email" value="{{ user.email }}" required />
+          <input type="password" placeholder="Password" name="password" value="{{ user.password }}" required />
+          <input type="text" name="foto" value="{{user.foto}}">
+          <button type="submit" class="save-user-button">Actualizar Usuario</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  {{> footer }}
+
+</body>
+
+</html>

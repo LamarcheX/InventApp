@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
-// require("dotenv").config();
+require("dotenv").config();
 
-const database = "TestDB";
-const url = `mongodb://localhost:27017/${database}`;
+const collection = process.env.DB_COLLECTION;
+const dbURI = process.env.DB_URI;
+const dbPort = process.env.DB_PORT;
+const url = `${dbURI}:${dbPort}/${collection}`;
 
 try {
   mongoose.connect(url);
@@ -10,8 +12,6 @@ try {
 } catch (error) {
   console.error();
 }
-
-// mongoose.connect(process.env.MONGODB_URI);
 
 /*const connection = async () => {
   try {
@@ -21,25 +21,6 @@ try {
     console.log(error);
   }
 };
-
-module.exports = connection;
-
-// import mongoose to interact with MongoDB
-const mongoose = require('mongoose')
-require('dotenv').config()
-
-// Async func to conect to DB
-const connectDB = async () => {
-    try {
-    // Try to connect to mongoDB using the URL from env var
-    await mongoose.connect(process.env.MONGODB_URI)
-      console.log('MongoDB connected')
-    
-    } catch (err) {
-        console.error(err)
-        process.exit(1)
-    }
-}
 
 module.exports = connectDB
 */

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrar Producto</title>
+    <link rel="stylesheet" href="/css/prod-management.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">InventApp</div>
+        <div class="search-bar">
+          <input type="text" placeholder="Buscar..." />
+          <button class="search-button">🔍</button>
+        </div>
+        <div class="user-info">
+          <span>Facturar</span>
+          <span>Juan Pérez</span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h2>Administrar Producto</h2>
+      <div class="product-management">
+        <div class="product-image">subir imagen</div>
+        <div class="product-fields">
+          <form action="" method="post">
+            <input type="text" placeholder="Nombre del producto" />
+            <input type="text" placeholder="Descripción corta" />
+            <textarea placeholder="Descripción del producto"></textarea>
+            <input type="text" placeholder="Sección" />
+            <input type="number" placeholder="Precio" />
+            <input type="number" placeholder="Disponibles" />
+            <fieldset class="product-features">
+              <legend>Características</legend>
+              <input type="text" name="características1" placeholder="1." />
+              <input type="text" name="características2" placeholder="2." />
+              <input type="text" name="características3" placeholder="3." />
+            </fieldset>
+          </form>
+          <button type="submit" class="save-product-button">
+            Salvar Producto
+          </button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Todos los derechos reservados, 2024.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/user-detail.css">
+  <title>{{ user.nombre }}</title>
+</head>
+
+<body>
+  {{> header }}
+  <main>
+    <div class="user-detail">
+      <div class="user-image">
+        <img src="{{ user.foto }}" alt="{{ user.nombre }}">
+      </div>
+      <div class="user-info">
+        <div class="container">
+          <span>Nombres: </span>
+          <p class="user-nombres"> {{ user.nombres }}</p>
+          <span>Apellido1: </span>
+          <p class="user-apellido1"> {{ user.apellido1 }}</p>
+          <span>Apellido2: </span>
+          <p class="user-apellido2"> {{user.apellido2}}</p>
+          <span>Celular: </span>
+          <p class="user-celular"> {{ user.celular }}</p>
+          <span>Cedula: </span>
+          <p class="user-cedula"> {{ user.cedula }}</p>
+          <span>Email: </span>
+          <p class="user-email"> {{ user.email}}</p>
+        </div>
+        <a class="btn-submit" href="/users/editarUsuario/{{user.id}}">Editar</a>
+      </div>
+
+    </div>
+  </main>
+  {{> footer }}
+</body>
+
+</html>

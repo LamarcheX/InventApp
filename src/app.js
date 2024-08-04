@@ -1,12 +1,9 @@
-// const bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 const express = require("express");
-// const session = require("express-session");
 const path = require("path");
 const hbs = require("hbs");
 const productsRouter = require("./routes/products.routes");
 const usermgmtRoutes = require("./routes/usermgmt.routes");
-
-// const { router: authRoutes, authMiddleware } = require("./routes/auth.routes");
 
 require("dotenv").config();
 require("./db/dbconnection");
@@ -26,30 +23,26 @@ hbs.registerHelper("float", function (int) {
   return parseFloat(int.toFixed(2));
 });
 
+hbs.registerHelper("list", function (context) {
+  let ret = ``;
+
+  for (var i = 0; i < context.length; i++) {
+    ret =
+      ret +
+      `<input type="text" placeholder="${i + 1}." name="caracteristicas${
+        i + 1
+      }" value="${context[i]}" />`;
+  }
+
+  return ret;
+});
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(productsRouter);
-
-// ---------------------------------
-// Middleware para manejar las sesiones
-// app.use(
-//   session({
-//     secret: "123",
-//     resave: false,
-//     saveUninitialized: true,
-//   })
-// );
-
-// Middleware settings
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
-// app.use(cors());
-
-// rutas de otros archivos
-// app.use("/", authRoutes);
-// app.use("/admin", authMiddleware);
 app.use(usermgmtRoutes);
 
-// ---------------------------------
-const port = process.env.PORT;
-app.listen(port, () => {
-  console.log(`Servidor corriendo en puerto ${port}`);
+const serverPort = process.env.SERVER_PORT;
+app.listen(serverPort, () => {
+  console.log(`Servidor corriendo en puerto ${serverPort}`);
 });

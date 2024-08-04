@@ -8,7 +8,7 @@ main {
   width: 100%;
 }
 
-.product-detail {
+.user-detail {
   display: flex;
   background-color: var(--clr-white);
   padding: 20px;
@@ -18,7 +18,7 @@ main {
   height: fit-content;
 }
 
-.product-image {
+.user-image {
   flex: 2;
   display: flex;
   align-items: center;
@@ -29,50 +29,43 @@ main {
   height: auto;
 }
 
-.product-image img {
+.user-image img {
   width: 100%;
   height: auto;
 }
 
-.product-info {
+.user-info {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.product-name {
-  font-weight: 700;
+.container span {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  color: var(--clr-grey-50);
 }
 
-.product-section {
-  color: var(--clr-grey-100);
-  margin: 0.45rem 0;
-}
-
-.product-price {
+.user-nombres,
+.user-apellido1 {
   color: var(--clr-black);
-  font-size: 3rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  margin: 10px 0;
 }
-.product-price span {
+
+.user-apellido2,
+.user-celular,
+.user-cedula,
+.user-email {
+  margin-left: 16px;
   font-size: 1.2rem;
-  margin-right: 0.25rem;
-  vertical-align: text-top;
+  color: var(--clr-black);
 }
 
-.product-description {
-  margin: 20px 0;
-}
-
-.product-features {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin-block-end: 2em;
-  margin-block-start: 0.5em;
-}
-.product-available {
+.user-email {
   font-weight: 600;
 }
 
