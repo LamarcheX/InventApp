@@ -1,0 +1,86 @@
+@import url(/css/main.css);
+
+main {
+  display: flex;
+  padding: 20px;
+  min-height: 90dvh;
+  width: 100%;
+  flex-direction: column;
+}
+
+.product-management {
+  display: flex;
+  background-color: var(--clr-white);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-width: 50vw;
+  height: 80%;
+  align-self: center;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+main > h2 {
+  font-weight: 600;
+}
+
+.product-image {
+  width: 60%;
+  height: auto;
+}
+
+.product-image img {
+  height: auto;
+  width: 100%;
+}
+
+.product-fields {
+  width: 30%;
+  /* width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.product-fields form input,
+.product-fields form select,
+.product-fields form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 3px 3px 3px var(--clr-grey-25);
+}
+
+.product-fields form textarea {
+}
+
+.product-features {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: none;
+  border-style: none;
+  padding: 0;
+}
+
+.save-product-button {
+  background-color: var(--clr-tone01-50);
+  color: var(--clr-white);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  text-align: center;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Producto</title>
+  <link rel="stylesheet" href="/css/prod-management.css">
+</head>
+
+<body>
+  {{> header }}
+  <main>
+    <h2>Agregar Producto</h2>
+    <div class="product-management">
+      <div id="product-image" class="product-image"></div>
+      <div class="product-fields">
+        <form action="/products/salvar" method="POST">
+          <input type="text" placeholder="Nombre del producto" name="nombre" required />
+          <input id="prodDescCorta" type="text" placeholder="Descripción corta" name="desccorta" required />
+          <textarea placeholder="Descripción del producto" name="descextendida" rows="4" cols="20"></textarea>
+          {{!-- <input type="text" placeholder="Sección" name="seccion" /> --}}
+          <select name="seccion" required>
+            <option value="" disabled selected>Seleccione una sección</option>
+            <option value="Carnes">Carnes</option>
+            <option value="Pescados y Mariscos">Pescados y Mariscos</option>
+            <option value="Frutas y Vegetales">Frutas y Vegetales</option>
+            <option value="Lácteos y Huevos">Lácteos y Huevos</option>
+            <option value="Quesos y Embutidos">Quesos y Embutidos</option>
+            <option value="Panadería y Repostería">Panadería y Repostería</option>
+            <option value="Platos Preparados">Platos Preparados</option>
+            <option value="Congelados">Congelados</option>
+            <option value="Despensa">Despensa</option>
+            <option value="Bebidas">Bebidas</option>
+            <option value="Cervezas, Vinos y Licores">Cervezas, Vinos y Licores</option>
+            <option value="Limpieza y Desechables">Limpieza y Desechables</option>
+            <option value="Salud y Belleza">Salud y Belleza</option>
+            <option value="Bebé">Bebé</option>
+            <option value="Mascotas">Mascotas</option>
+            <option value="Complementos del Hogar">Complementos del Hogar</option>
+          </select>
+          <input type="number" placeholder="Precio" name="precio" required />
+          <input type="number" placeholder="Disponibles" name="disponibles" required />
+          <fieldset class="product-features">
+            <legend>Características</legend>
+            <input type="text" placeholder="1." name="caracteristicas1" />
+            <input type="text" placeholder="2." name="caracteristicas2" />
+            <input type="text" placeholder="3." name="caracteristicas3" />
+          </fieldset>
+          <input id="img-src" type="text" name="foto" placeholder="Foto del producto" required>
+          <button type="submit" class="save-product-button">
+            Salvar Producto
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+  {{> footer }}
+
+</body>
+<script>
+  const imgDisplay = document.getElementById('product-image');
+  const prodDescCorta = document.getElementById('prodDescCorta');
+  const imgSrc = document.getElementById('img-src');
+
+  imgSrc.addEventListener("change", function () {
+    if (imgSrc.value && prodDescCorta.value) {
+      const imgElement = document.createElement('img');
+      imgElement.src = imgSrc.value;
+      imgElement.alt = prodDescCorta.value;
+      imgDisplay.innerHTML = '';
+      imgDisplay.appendChild(imgElement);
+    } else {
+      imgDisplay.innerHTML = 'Colocar una ruta a la imagen';
+    }
+  });
+</script>
+
+</html>

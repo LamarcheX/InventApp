@@ -9,6 +9,7 @@
   --fs-600: 2rem;
   --clr-white: #f7f7f7;
   --clr-grey-10: #ededed;
+  --clr-grey-25: #ddd;
   --clr-grey-50: #aaa;
   --clr-grey-100: #777;
   --clr-black: #333;
@@ -150,20 +151,24 @@ h1 {
 
 main {
   display: flex;
-  min-height: 90%;
+  min-height: 100dvh;
+  gap: 20px;
 }
 
 aside {
-  width: 25%;
   background-color: var(--clr-white);
   padding-top: 20px;
   padding-bottom: 10px;
   padding-inline: 20px;
-  align-items: center;
+  flex-basis: 400px;
+  color: var(--clr-tone01-100);
 }
 
 .selected {
   font-weight: 600;
+}
+aside a:visited {
+  color: var(--clr-tone01-100);
 }
 
 aside a:hover {
@@ -181,21 +186,16 @@ aside ul {
 
 aside ul li {
   margin: 10px 0;
-  font-size: 0.85rem;
+  font-size: 1.2rem;
 }
 
 section {
-  width: 75%;
-  padding: 20px;
+  flex: 2 2 content;
 }
 
 .grid-head,
 .grid-rows {
-  display: grid;
-  grid-template-columns: 25% 30% repeat(3, 15%);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0.1%;
-  grid-template-areas: "nombre descri dispon precio accion ";
+  display: flex;
   justify-content: space-between;
   align-content: center;
   align-items: center;
@@ -208,8 +208,29 @@ section {
 }
 
 .grid-head {
-  text-align: center;
+  border-top: 1px solid var(--clr-grey-50);
   font-weight: 700;
+  width: 100%;
+  display: flex;
+}
+
+.div1 {
+  flex: 1 0.5 140px;
+}
+.div2 {
+  flex: 1 2 560px;
+}
+.div3 {
+  flex: 1 1 130px;
+  text-align: center;
+}
+.div4 {
+  flex: 1 1 130px;
+  text-align: center;
+}
+.div5 {
+  flex: 1 1 130px;
+  text-align: center;
 }
 
 .grid-rows {
@@ -217,11 +238,13 @@ section {
   background-color: var(--clr-white);
 }
 
-.grid-rows > * {
+.product-foto {
+  width: 100%;
+  height: auto;
+  flex: 1 0.5 120px;
 }
 
 .product-name {
-  grid-area: nombre;
 }
 .product-name a {
   font-weight: 700;
@@ -233,21 +256,21 @@ section {
 }
 
 .product-descr {
-  grid-area: descri;
-  font-style: italic;
+  font-size: calc(1rem + 0.2vw);
   color: var(--clr-grey-100);
+  flex: 1 2 520px;
 }
 
 .disponibles {
-  grid-area: dispon;
   text-align: center;
   font-size: 1.3rem;
+  flex: 1 1 110px;
 }
 
 .product-precio {
   text-align: center;
-  grid-area: precio;
   font-size: 1.3rem;
+  flex: 1 1 110px;
 }
 
 .product-precio span {
@@ -257,27 +280,34 @@ section {
 }
 
 .product-acciones {
-  grid-area: accion;
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
-  padding: 5px;
+  justify-content: center;
+  flex: 1 1 110px;
+  gap: 40px;
 }
 
-.basket-icon,
+.delete-icon,
 .edit-icon {
+  width: 20px;
+  height: auto;
+  border: none;
+  flex-basis: 30px;
+  display: block;
+  cursor: pointer;
 }
 
-.basket-icon {
+.delete-icon {
+  color: var(--clr-danger);
+}
+
+.edit-icon {
   color: var(--clr-tone01-100);
-}
-
-.edit-icon {
-  color: var(--clr-grey-100);
 }
 
 footer {
   text-align: center;
+  vertical-align: middle;
   padding: 10px 0;
   background-color: var(--clr-white);
   margin-top: 20px;

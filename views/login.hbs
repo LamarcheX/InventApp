@@ -1,22 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inventapp</title>
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="/css/login.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/login.css" />
+  <title>Inicio de Sesión InventAPP</title>
 </head>
 
-<body class="bg-dark text-light">
-  {{> header}}
-  <div class="container mt-5">
-    {{{body}}}
+<body>
+  <div class="login-container">
+    <h2>Bienvenido a <span>InventAPP</span></h2>
+
+    <p>Inicia sesión para acceder a tu cuenta</p>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required />
+      </div>
+      <button type="submit" class="login-button">Iniciar sesión</button>
+    </form>
   </div>
-  {{> footer}}
-  <!-- Custom JavaScript -->
-  <script src="/public/main.js"></script>
 </body>
+<script src="js/main.js"></script>
 
 </html>

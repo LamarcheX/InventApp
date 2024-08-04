@@ -13,26 +13,29 @@
   <main>
     <div class="product-detail">
       <div class="product-image">
-        {{!-- <img src="placeholder-image.png" alt="Imagen del producto"> --}}
+        <img src={{ producto.foto }} alt="{{ producto.desccorta }}">
       </div>
       <div class="product-info">
-        <h2 class="product-name">{{ producto.nombre }}</h2>
-        <p class="product-section"> Seccion: {{ producto.seccion }}</p>
-        <p class="product-price"><span>$</span>{{float producto.precio}}</p>
-        <p class="product-description">
-          <span class="product-available">Disponibles:</span> {{ producto.disponibles }} unids.
-        </p>
-        <p class="product-description">
-          {{ producto.descextendida }}
-        </p>
-        <h3>Características</h3>
-        <ul class="product-features">
-          {{#each producto.caracteristicas}}
-          <li>{{this}}</li>
-          {{/each}}
-        </ul>
-        <button class="add-to-cart">Agregar</button>
+        <div class="container">
+          <h2 class="product-name">{{ producto.nombre }}</h2>
+          <p class="product-section"> Seccion: {{ producto.seccion }}</p>
+          <p class="product-price"><span>$</span>{{float producto.precio}}</p>
+          <p class="product-description">
+            <span class="product-available">Disponibles:</span> {{ producto.disponibles }} unids.
+          </p>
+          <p class="product-description">
+            {{ producto.descextendida }}
+          </p>
+          <h3>Características</h3>
+          <ul class="product-features">
+            {{#each producto.caracteristicas}}
+            <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+        <a class="btn-submit" href="/products/editarProducto/{{producto.id}}">Editar</a>
       </div>
+
     </div>
   </main>
   {{> footer }}

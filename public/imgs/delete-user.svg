@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="40"
+   height="39.31572"
+   viewBox="0 0 40 39.31572"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(3.1738452e-7,-0.34214035)">
+    <g
+       id="g6"
+       transform="matrix(1.2264942,0,0,1.2264942,-4.5298842,-6.3284869)"
+       style="stroke-width:0.815332">
+      <circle
+         style="fill:#currentColor;stroke:none;stroke-width:2.446;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+         id="path3"
+         cx="20"
+         cy="12.570726"
+         r="7.1319504" />
+      <path
+         id="circle3"
+         style="display:inline;fill:#currentColor;stroke:none;stroke-width:2.446;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+         d="m 20,20.160156 c -9.006154,0 -16.3066406,7.228167 -16.3066406,16.144532 0,0 4.1637447,1.189453 16.0546876,1.189453 11.890943,0 16.558594,-1.189453 16.558594,-1.189453 0,-4.241772 -1.655082,-8.097572 -4.357422,-10.978516 l -3.330078,3.328125 3.626953,3.626953 c 0.614809,0.614809 0.614808,1.603941 0,2.21875 -0.614809,0.614809 -1.603941,0.614809 -2.21875,0 L 26.400391,30.873047 22.773438,34.5 c -0.614809,0.614809 -1.603942,0.614809 -2.21875,0 -0.614809,-0.614809 -0.614809,-1.603941 0,-2.21875 l 3.626953,-3.626953 -3.626953,-3.625 c -0.614809,-0.614808 -0.614809,-1.605895 0,-2.220703 0.307404,-0.307405 0.708195,-0.460938 1.109374,-0.460938 0.40118,0 0.801972,0.153534 1.109376,0.460938 l 3.626953,3.626953 3.626953,-3.626953 c 0.605871,-0.605872 1.574966,-0.613648 2.191406,-0.02539 -0.07639,-0.225298 -0.198626,-0.43886 -0.378906,-0.619141 -0.625659,-0.625657 -1.632154,-0.625657 -2.257813,0 l -0.640625,0.640626 C 26.373343,21.133881 23.302619,20.160156 20,20.160156 Z" />
+    </g>
+  </g>
+</svg>

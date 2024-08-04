@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrar Producto</title>
+  <link rel="stylesheet" href="/css/prod-management.css">
+</head>
+
+<body>
+  {{> header }}
+  <main>
+    <h2>Modificar Producto</h2>
+    <div class="product-management">
+      <div class="product-image"><img src={{ producto.foto }} alt="{{ producto.desccorta }}" class="imagendelproducto"
+          value="{{ producto.foto }}">
+      </div>
+      <div class="product-fields">
+        <form action="/products/actualizar/{{producto.id}}" method="POST">
+          <input type="hidden" name="foto" value="{{producto.foto}}">
+          <input type="text" placeholder="Nombre del producto" name="nombre" value="{{ producto.nombre }}" />
+          <input type="text" placeholder="Descripción corta" name="desccorta" value="{{ producto.desccorta }}" />
+          <textarea placeholder="Descripción del producto" name="descextendida">{{ producto.descextendida }}</textarea>
+          <input type="text" placeholder="Sección" name="seccion" value="{{ producto.seccion }}" />
+          <input type="number" placeholder="Precio" name="precio" value="{{ producto.precio }}" />
+          <input type="number" placeholder="Disponibles" name="disponibles" value="{{ producto.disponibles }}" />
+          <fieldset class="product-features">
+            <legend>Características</legend>
+            {{#list producto.caracteristicas }}
+            {{/list}}
+          </fieldset>
+          <button type="submit" class="save-product-button">
+            Actualizar Producto
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+  {{> footer }}
+
+</body>
+
+</html>

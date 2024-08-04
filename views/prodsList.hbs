@@ -14,7 +14,7 @@
     {{> filters }}
     <section>
       <div class="grid-head">
-        <div class="div1">Nombre</div>
+        <div class="div1">Foto</div>
         <div class="div2">Descripción</div>
         <div class="div3">Cant. Disp.</div>
         <div class="div4">Precio</div>
@@ -22,40 +22,18 @@
       </div>
       {{#each productos}}
       <div class="grid-rows">
-        <div class="product-name"><a href="/detalle/{{this._id}}">{{ this.nombre }}</a></div>
+        <div class="product-foto"><a href="/products/detalle/{{this._id}}">
+            <img src="{{ this.foto }}" alt="{{ this.desccorta }}"></a></div>
         <div class="product-descr">{{ this.desccorta }}</div>
         <div class="disponibles">{{ this.disponibles }}</div>
         <div class="product-precio"><span>$</span> {{ this.precio }}</div>
         <div class="product-acciones">
-          {{!-- <div class="acciones-container"> --}}
-            <a href="#">
-              <div class="basket-icon">
-                <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-                  <g transform="translate(-66.929248,-110.30634)">
-                    <path style="fill:currentColor;stroke:none;"
-                      d="m 67.922469,122.47304 c -0.550131,0 -0.993221,0.44309 -0.993221,0.99322 v 1.72754 c 0,0.55013 0.44309,0.99322 0.993221,0.99322 h 0.308508 l 1.240751,7.65897 a 2.1950574,2.1950574 0 0 0 2.166277,1.84433 h 14.747937 a 2.4273968,2.4273968 0 0 0 2.404504,-2.09393 l 1.028878,-7.40937 h 0.286804 c 0.55013,0 0.993221,-0.44309 0.993221,-0.99322 v -1.72754 c 0,-0.55013 -0.443091,-0.99322 -0.993221,-0.99322 z m 6.412529,3.83077 c 0.491783,0 0.887801,0.47635 0.887801,1.06816 v 4.36355 c 0,0.59181 -0.396018,1.06815 -0.887801,1.06815 -0.491785,0 -0.887802,-0.47634 -0.887802,-1.06815 v -4.36355 c 0,-0.59181 0.396017,-1.06816 0.887802,-1.06816 z m 4.6793,0 c 0.491785,0 0.887802,0.47635 0.887802,1.06816 v 4.36355 c 0,0.59181 -0.396017,1.06815 -0.887802,1.06815 -0.491784,0 -0.887801,-0.47634 -0.887801,-1.06815 v -4.36355 c 0,-0.59181 0.396017,-1.06816 0.887801,-1.06816 z m 4.679301,0 c 0.491785,0 0.887285,0.47635 0.887285,1.06816 v 4.36355 c 0,0.59181 -0.3955,1.06815 -0.887285,1.06815 -0.491784,0 -0.887801,-0.47634 -0.887801,-1.06815 v -4.36355 c 0,-0.59181 0.396017,-1.06816 0.887801,-1.06816 z" />
-                    <path style="fill:currentColor;stroke-width:0.179796;stroke-linecap:round"
-                      d="m 0.899772,151.51494 a 1.8467726,1.7504463 45 0 0 -0.34723536,-0.33489 c -2.85298994,-2.13881 -5.72113814,-2.91906 -8.22985904,-2.4769 -2.5087206,0.44215 -4.4984956,1.99032 -6.0164346,3.88753 a 1.8467726,1.7504463 45 0 0 -0.354495,1.26254 1.801333,1.7073767 45 0 1 -0.245336,-0.34554 1.801333,1.7073767 45 0 1 -0.206602,-0.66234 1.801333,1.7073767 45 0 1 0.05937,-0.67777 1.801333,1.7073767 45 0 1 0.315445,-0.58915 c 0.08489,-0.1012 0.171101,-0.20143 0.257619,-0.30107 l -2.572057,-2.57206 a 0.81678314,0.81678314 0 0 0 -1.39468,0.57788 l -1.82e-4,8.07262 a 1.9316805,1.9316805 0 0 0 1.931939,1.93194 l 8.0726181,-1.8e-4 a 0.81678353,0.81678353 0 0 0 0.577878,-1.39468 l -3.3019651,-3.30197 c 1.1131201,-1.28367 2.3630143,-2.10922 3.6829025,-2.34184 1.4326904,-0.25251 3.1077763,0.0775 5.363807,1.76873 a 1.8467726,1.7504463 45 0 0 2.50610254,-0.31204 1.8467726,1.7504463 45 0 0 -0.098835,-2.19081 z"
-                      transform="matrix(0.35682467,-0.37646059,0.35682467,0.37646059,28.555346,54.503803)" />
-                  </g>
-                </svg>
-              </div>
-            </a>
-            <a href="/detalle/{{this._id}}">
-              <div class="edit-icon">
-                <svg width="25" height="25" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M8 0.5H34C38.1421 0.5 41.5 3.85786 41.5 8V32C41.5 36.1421 38.1421 39.5 34 39.5H8C3.85786 39.5 0.5 36.1421 0.5 32V8C0.5 3.85786 3.85786 0.5 8 0.5Z"
-                    fill="currentcolor" stroke="none" />
-                  <rect x="0" y="0" width="25" height="25" transform="matrix(-1 0 0 1 35 5)" stroke="none" />
-                  <path
-                    d="M22.25 10H31C31.663 10 32.2989 10.2634 32.7678 10.7323C33.2366 11.2011 33.5 11.837 33.5 12.5V30C33.5 30.6631 33.2366 31.299 32.7678 31.7678C32.2989 32.2366 31.663 32.5 31 32.5H13.5C12.837 32.5 12.2011 32.2366 11.7322 31.7678C11.2634 31.299 11 30.6631 11 30V21.25M12.875 8.12504C12.3777 7.62776 11.7033 7.34839 11 7.34839C10.2967 7.34839 9.62228 7.62776 9.125 8.12504C8.62772 8.62232 8.34835 9.29678 8.34835 10C8.34835 10.7033 8.62772 11.3778 9.125 11.875L21 23.75L26 25L24.75 20L12.875 8.12504Z"
-                    stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </div>
-            </a>
-            {{!--
-          </div> --}}
+          <a href="/products/editarProducto/{{this._id}}" class="edit-icon">
+            {{> editIcon}}
+          </a>
+          <a class="delete-icon" type="button" onclick="deleteProduct('{{this._id}}')">
+            {{> bin}}
+          </a>
         </div>
       </div>
       {{/each}}
@@ -63,5 +41,24 @@
   </main>
   {{> footer}}
 </body>
+<script>
+  function deleteProduct(productId) {
+    if (confirm("¿Estás seguro de que deseas eliminar este producto?")) {
+      fetch(`/products/borrar/${productId}`, {
+        method: 'DELETE',
+      })
+        .then(response => {
+          if (response.ok) {
+            window.location.reload();
+          } else {
+            throw new Error('Error al eliminar el producto');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+  }
+</script>
 
 </html>

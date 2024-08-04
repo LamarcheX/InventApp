@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// Define user schema
-const UserSchema = new Schema({
+const userSchema = new Schema({
+  foto: { type: String },
   nombres: { type: String, require: true },
   apellido1: { type: String, require: true },
   apellido2: { type: String, require: true },
@@ -19,5 +19,9 @@ const UserSchema = new Schema({
   },
 });
 
-// Export the user schema
-module.exports = mongoose.model("User", UserSchema);
+userSchema.statics.findByIdAndDelete = function (id) {
+  return this.findById(id).then((user) => (user ? user.remove() : null));
+};
+
+const user = mongoose.model("user", userSchema);
+module.exports = user;

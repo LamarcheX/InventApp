@@ -1,54 +1,31 @@
 @import url(/css/main.css);
 
-:root {
-  --ff-sans-normal: Arial, sans-serif;
-  --fs-100: 0.6rem;
-  --fs-200: 0.8rem;
-  --fs-400: 1rem;
-  --fs-600: 2rem;
-  --clr-white: #f7f7f7;
-  --clr-grey-10: #ededed;
-  --clr-grey-25: #ccc;
-  --clr-grey-50: #aaa;
-  --clr-grey-100: #777;
-  --clr-black: #333;
-  --clr-tone01-10: #a9a6ff;
-  --clr-tone01-50: #5651ff;
-  --clr-tone01-100: #0800ff;
-  --clr-tone01-200: #07029e;
-  --svg-fill-color: #07029e;
-  --clr-danger: #ff0000;
-  --debug: 1px solid red;
-}
-
 .main-container {
   width: 100%;
-  height: 90dvh;
+  min-height: 90dvh;
   display: flex;
   flex-direction: column;
   gap: 24px;
   padding: 20px;
-  /* border: var(--debug); */
 }
 
 .main-container h2 {
   font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 8px;
 }
 
 .user-management {
-  /* border: var(--debug); */
-  width: 100%;
+  width: min-max(100%);
 }
 
 .user-form {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "imagen nombre apellido1 apellido2 celular cedula submitBtn";
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 18px;
+  grid-template-columns: 200px, repeat(3, min(1fr, 300px));
+  grid-template-rows: 200px, repeat(3, 50px);
+  grid-column-gap: 8px;
+  grid-row-gap: 6px;
   align-items: center;
-  /* border: var(--debug); */
 }
 
 .user-form input {
@@ -56,27 +33,50 @@
   font-size: 1rem;
   padding: 6px;
   border-radius: 6px;
+  width: 100%;
+  align-self: center;
+  justify-self: center;
 }
 
 .add-user-button {
   width: 100%;
   padding: 6px;
   font-size: 16px;
-  background-color: var(--clr-tone01-100);
+  background-color: var(--clr-tone01-50);
   color: var(--clr-white);
   border: none;
   cursor: pointer;
   border-radius: 6px;
 }
 
+.add-user-button:hover {
+  background-color: var(--clr-tone01-100);
+}
+
+.user-management {
+  margin-bottom: 24px;
+  background-color: var(--clr-grey-10);
+  padding: 32px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 6px var(--clr-grey-50);
+}
+
+.user-management input,
+.user-management button {
+  box-shadow: 2px 2px 6px var(--clr-grey-25);
+}
+
 .user-management-imagen {
-  grid-area: 1 / 1 / 3 / 2;
+  align-self: center;
+  justify-self: center;
+  grid-area: 1 / 1 / 4 / 2;
   width: 200px;
   height: 200px;
   background-color: var(--clr-white);
+  border-radius: 6px;
 }
 .user-management-nombre {
-  grid-area: nombre;
+  grid-area: 1 / 2 / 2 / 3;
 }
 .user-management-apellido1 {
   grid-area: 1 / 3 / 2 / 4;
@@ -84,14 +84,26 @@
 .user-management-apellido2 {
   grid-area: 1 / 4 / 2 / 5;
 }
-.user-management-celular {
+.user-management-cedula {
   grid-area: 2 / 2 / 3 / 3;
 }
-.user-management-cedula {
+.user-management-celular {
   grid-area: 2 / 3 / 3 / 4;
 }
-.user-management-submitBtn {
+.user-management-email {
   grid-area: 2 / 4 / 3 / 5;
+}
+
+.user-management-photo {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+.user-management-password {
+  grid-area: 3 / 2 / 3 / 3;
+}
+
+.user-management-submitBtn {
+  grid-area: 3 / 4 / 4 / 5;
 }
 
 /* Users List */
@@ -110,7 +122,6 @@
   grid-row-gap: 0px;
   border-radius: 6px;
   padding-inline: 20px;
-  /* border: var(--debug); */
 }
 
 .users-list-rows > div,
@@ -155,9 +166,7 @@
   margin-top: 16px;
   height: 3rem;
   box-shadow: 2px 2px 3px var(--clr-grey-25);
-  /* align-content: center; */
   align-items: center;
-  /* border: var(--debug); */
 }
 
 .users-list-image-row {
@@ -183,28 +192,10 @@
 .users-list-cedula-row {
   grid-area: 1 / 6 / 2 / 7;
 }
+
 .users-list-acciones-row {
   grid-area: 1 / 7 / 2 / 8;
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
-  padding: 5px;
-}
-
-.users-list-acciones-deleteUser,
-.users-list-acciones-updateUser {
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  width: 30px;
-  height: 30px;
-}
-
-.users-list-acciones-deleteUser {
-  background-color: var(--clr-danger);
-}
-.users-list-acciones-updateUser {
-  background-color: var(--clr-grey-100);
+  justify-content: space-evenly;
 }

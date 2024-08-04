@@ -12,32 +12,42 @@
   {{> header }}
   <main class="main-container">
     <h2>Administrar Usuarios</h2>
-    <section class="user-management">
-      <form>
+    <div class="user-management">
+      <form action="/users/salvar" method="POST">
         <div class="user-form">
           <div class="user-management-imagen"></div>
           <div class="user-management-nombre">
-            <input type="text" placeholder="Nombre(s)" />
+            <input id="userNombre" type="text" name="nombres" placeholder="Nombre(s)" required />
           </div>
           <div class="user-management-apellido1">
-            <input type="text" placeholder="Apellido 1" />
+            <input type="text" name="apellido1" placeholder="Apellido 1" required />
           </div>
           <div class="user-management-apellido2">
-            <input type="text" placeholder="Apellido 2" />
+            <input type="text" name="apellido2" placeholder="Apellido 2" required />
           </div>
           <div class="user-management-celular">
-            <input type="text" placeholder="Número Celular" />
+            <input type="text" name="celular" placeholder="Número Celular" required />
           </div>
           <div class="user-management-cedula">
-            <input type="text" placeholder="Cédula" />
+            <input type="text" name="cedula" placeholder="Cédula" required />
+          </div>
+          <div class="user-management-email">
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+          <div class="user-management-password">
+            <input type="password" name="password" placeholder="Password" required />
+          </div>
+          <div class="user-management-photo">
+            <input id="imgSrc" type="text" name="foto" placeholder="foto" />
           </div>
           <div class="user-management-submitBtn">
             <button type="submit" class="add-user-button">
               Agregar Usuario
             </button>
           </div>
+        </div>
       </form>
-    </section>
+    </div>
     <h2>Listado de Usuarios</h2>
     <div class="users-list">
       <div class="users-list-head">
@@ -65,34 +75,73 @@
       </div>
       {{#each users}}
       <div class="users-list-rows">
-        <div class="users-list-image">
-          <h4>foto</h4>
+        <div class="users-list-image-row"><a href="/users/{{ this.id }}">
+            <img src="{{ this.foto }}" alt="foto de {{ this.name }}">
+          </a>
         </div>
-        <div class="users-list-nombre">
-          {{ this.nombres }}
+        <div class="users-list-nombre-row">
+          <a href="/users/{{ this.id }}">{{ this.nombres }}</a>
         </div>
-        <div class="users-list-apellido1">
-          {{ this.apellido1 }}
+        <div class="users-list-apellido1-row">
+          <a href="/users/{{ this.id }}">{{ this.apellido1 }}</a>
         </div>
-        <div class="users-list-apellido2">
-          {{ this.apellido2 }}
+        <div class="users-list-apellido2-row">
+          <a href="/users/{{ this.id }}">{{ this.apellido2 }}</a>
         </div>
-        <div class="users-list-celular">
+        <div class="users-list-celular-row">
           {{ this.celular }}
         </div>
-        <div class="users-list-cedula">
+        <div class="users-list-cedula-row">
           {{ this.cedula }}
         </div>
-        <div class="users-list-acciones">
-          <button class="users-list-acciones-deleteUser">X</button>
-          <button class="users-list-acciones-updateUser">V</button>
+        <div class="users-list-acciones-row">
+          <a class="edit-icon" href="/users/editarUsuario/{{ this._id }}" on>
+            {{> editIcon }}
+          </a>
+          <a class="delete-icon" type="button" onclick="deleteUser('{{this._id}}')">
+            {{> deleteUserIcon}}
+          </a>
         </div>
       </div>
       {{/each}}
     </div>
   </main>
-  {{> footer}}
-
+  {{> footer }}
 </body>
+<script>
+  const imgSrc = document.getElementById('imgSrc');
+  const userNombre = document.getElementById('userNombre');
+  const imgDisplay = document.querySelector('.user-management-imagen');
+
+  imgSrc.addEventListener("change", function () {
+    if (imgSrc.value && userNombre.value) {
+      const imgElement = document.createElement('img');
+      imgElement.src = imgSrc.value;
+      imgElement.alt = userNombre.value;
+      imgDisplay.innerHTML = '';
+      imgDisplay.appendChild(imgElement);
+    } else {
+      imgDisplay.innerHTML = '';
+    }
+  });
+
+  function deleteUser(userId) {
+    if (confirm("¿Estás seguro de que deseas eliminar este usuario?")) {
+      fetch(`/users/borrar/${userId}`, {
+        method: 'DELETE',
+      })
+        .then(response => {
+          if (response.ok) {
+            window.location.reload();
+          } else {
+            throw new Error('Error al eliminar el usuario');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+  }
+</script>
 
 </html>
