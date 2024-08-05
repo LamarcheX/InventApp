@@ -1,0 +1,56 @@
+[
+  {
+    "nombres": "Juan",
+    "apellido1": "Gómez",
+    "apellido2": "Pérez",
+    "celular": "1234567890",
+    "cedula": "123456789",
+    "email": "juangomez@mail.com",
+    "password": "password123"
+  },
+  {
+    "nombres": "María",
+    "apellido1": "Rodríguez",
+    "apellido2": "López",
+    "celular": "2345678901",
+    "cedula": "234567890",
+    "email": "mariarodriguez@mail.com",
+    "password": "password456"
+  },
+  {
+    "nombres": "Carlos",
+    "apellido1": "Sánchez",
+    "apellido2": "Martínez",
+    "celular": "3456789012",
+    "cedula": "345678901",
+    "email": "carlossanchez@mail.com",
+    "password": "password789"
+  },
+  {
+    "nombres": "Ana",
+    "apellido1": "González",
+    "apellido2": "Fernández",
+    "celular": "4567890123",
+    "cedula": "456789012",
+    "email": "anagonzalez@mail.com",
+    "password": "password012"
+  },
+  {
+    "nombres": "Pedro",
+    "apellido1": "Díaz",
+    "apellido2": "Hernández",
+    "celular": "5678901234",
+    "cedula": "567890123",
+    "email": "pedrodiaz@mail.com",
+    "password": "password345"
+  },
+  {
+    "nombres": "Laura",
+    "apellido1": "Torres",
+    "apellido2": "Ramírez",
+    "celular": "6789012345",
+    "cedula": "678901234",
+    "email": "lauratorres@mail.com",
+    "password": "password678"
+  }
+]

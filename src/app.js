@@ -1,3 +1,4 @@
+require('dotenv').config({ path: '.env_template' });
 // const bodyParser = require("body-parser");
 const express = require("express");
 // const session = require("express-session");
@@ -6,13 +7,17 @@ const hbs = require("hbs");
 const productsRouter = require("./routes/products.routes");
 const usermgmtRoutes = require("./routes/usermgmt.routes");
 
-// const { router: authRoutes, authMiddleware } = require("./routes/auth.routes");
 
-require("dotenv").config();
+// require("dotenv").config();
 require("./db/dbconnection");
 require("./models/product.model");
 
+// Inicialización de 'app'
 const app = express();
+
+app.use(express.json());
+app.use('/api/auth', loginRoutes);
+
 
 const publicDirectoryPath = path.join(__dirname, "../public");
 app.use(express.static(publicDirectoryPath));
@@ -28,28 +33,9 @@ hbs.registerHelper("float", function (int) {
 
 app.use(productsRouter);
 
-// ---------------------------------
-// Middleware para manejar las sesiones
-// app.use(
-//   session({
-//     secret: "123",
-//     resave: false,
-//     saveUninitialized: true,
-//   })
-// );
-
-// Middleware settings
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
-// app.use(cors());
-
-// rutas de otros archivos
-// app.use("/", authRoutes);
-// app.use("/admin", authMiddleware);
 app.use(usermgmtRoutes);
 
-// ---------------------------------
 const port = process.env.PORT;
 app.listen(port, () => {
-  console.log(`Servidor corriendo en puerto ${port}`);
+  console.log(`Servidor corriendo en puerto http://localhost:${port}`);
 });

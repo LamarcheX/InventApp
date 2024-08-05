@@ -1,5 +1,6 @@
+require('dotenv').config({ path: '.env_template' })
 const mongoose = require("mongoose");
-// require("dotenv").config();
+require("dotenv").config();
 
 const database = "TestDB";
 const url = `mongodb://localhost:27017/${database}`;
