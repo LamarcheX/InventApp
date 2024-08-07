@@ -8,6 +8,7 @@ const usermgmtRoutes = require("./routes/usermgmt.routes");
 require("dotenv").config();
 require("./db/dbconnection");
 require("./models/product.model");
+require("./models/user.model");
 
 const app = express();
 
