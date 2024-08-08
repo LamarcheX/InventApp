@@ -69,6 +69,8 @@ controller.addProduct = async (req, res) => {
   console.log(`body del formulario: ${req.body.id}`);
   console.log(`--------------------------------`);
 
+  const page = parseInt(req.query.page) || 1;
+
   if (req.params.id) {
     console.log(`producto con ID`);
   }

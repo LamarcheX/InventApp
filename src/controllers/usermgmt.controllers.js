@@ -1,6 +1,6 @@
 // const bcrypt = require("bcryptjs");
 
-const userModel = require("../models/user");
+const userModel = require("../models/user.model");
 require("../db/dbconnection");
 
 const controller = {};
