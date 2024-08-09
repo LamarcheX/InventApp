@@ -244,8 +244,8 @@ section {
   flex: 1 0.5 120px;
 }
 
-.product-name {
-}
+/* .product-name {
+} */
 .product-name a {
   font-weight: 700;
   color: var(--clr-black);

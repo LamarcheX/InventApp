@@ -6,6 +6,8 @@ const dbURI = process.env.DB_URI;
 const dbPort = process.env.DB_PORT;
 const url = `${dbURI}:${dbPort}/${collection}`;
 
+
+
 try {
   mongoose.connect(url);
   console.log("MongoDb corriendo");
